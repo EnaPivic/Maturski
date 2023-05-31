@@ -1,0 +1,54 @@
+{% extends 'teaching_staff/base.html' %}
+
+
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="small-box bg-dark">
+                    <div class="inner">
+
+                        <h3>Take Attendance</h3>
+                    </div>
+                  
+                    <a href="{% url 'staff_take_attendance' %}" class="small-box-footer">Click here! </a>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="small-box bg-dark">
+                    <div class="inner">
+
+                        <h3>Edit Attendance </h3>
+                    </div>
+                 
+                    <a href="{% url 'staff_edit_attendance' %}" class="small-box-footer">Click here!</a>
+                    </div>
+                </div>
+              
+                <div class="col-6">
+                    <div class="small-box bg-dark">
+                    <div class="inner">
+
+                        <h3>Add Grade</h3>
+                    </div>
+                 
+                    <a href="{% url 'staff_add_grade' %}" class="small-box-footer">Click here! </i></a>
+                    </div>
+                </div>
+                
+            </div>
+         
+           </div>
+      </section>
+
+  {% endblock main_content %}
+
+
+    

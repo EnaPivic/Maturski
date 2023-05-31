@@ -1,0 +1,61 @@
+{% extends 'admin_t/base.html' %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-6">
+              <div class="small-box bg-dark">
+                <div class="inner">
+                  <h3>Manage Students</h3>
+                </div>
+           
+                <a href="{% url 'manage_student' %}" class="small-box-footer">Click here! </a>
+              </div>
+            </div>
+            <div class=" col-6">
+              <div class="small-box bg-dark">
+                <div class="inner">
+                  <h3>Manage Staff</h3>
+                </div>
+            
+                <a href="{% url 'manage_staff' %}" class="small-box-footer">Click here! </a>
+              </div>
+            </div>
+            
+            <div class=" col-6 ">
+              <div class="small-box bg-dark ">
+                <div class="inner">
+                  <h3>Manage Class Groups</h3>
+                </div>
+             
+                <a href="{% url 'manage_classgr' %}" class="small-box-footer">Click here!</a>
+              </div>
+            </div>
+            <div class=" col-6">
+              <div class="small-box bg-dark">
+                <div class="inner">
+
+                  <h3>Manage Subjects</3>
+                </div>
+            
+                <a href="{% url 'manage_subject' %}" class="small-box-footer">Click here! </a>
+              </div>
+            </div>
+            <div class=" col-6">
+              <div class="small-box bg-dark">
+                <div class="inner">
+
+                  <h3>Manage School Years</h3>
+                </div>
+            
+                <a href="{% url 'manage_schyear' %}" class="small-box-footer">Click here! </a>
+              </div>
+            </div>
+          </div>
+                  </section>
+
+  {% endblock main_content %}

@@ -1,0 +1,62 @@
+{% extends 'student/base.html' %}
+
+{% block page_title %}
+    Grades
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+
+            
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card card-primary">
+                    
+
+                        <div class="card-body">
+                           <div class="table-responsive">
+                                <table class="table">
+                                    <thead class="thead-light">
+                                    <tr>
+                                        <th>Subject</th>
+                                        <th>Exam points</th>
+                                        <th>Grade</th>
+                                    </tr>
+                                    </thead>
+                                    
+                                    {% for row in student_grade %}
+                                    <tr>
+                                        <td>{{ row.subject_id.subject_name }}</td>
+                                        <td>{{ row.subject_exam_points }}</td>
+                                        <td>
+                                            {% if row.subject_exam_points >= 40 and row.subject_exam_points <= 59 %}
+                                                <span class="alert ">2 (D)</span>
+                                            {% elif row.subject_exam_points >= 60 and row.subject_exam_points <= 69 %}
+                                                <span class="alert ">3 (C)</span>
+                                            {% elif row.subject_exam_points >= 70 and row.subject_exam_points <= 85 %}
+                                                <span class="alert ">4 (B)</span>
+                                            {% elif row.subject_exam_points >= 86  %}
+                                                <span class="alert ">5 (A)</span>
+                                            {% else  %}
+                                                <span class="alert ">1 (F)</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      </section>
+
+  {% endblock main_content %}
+

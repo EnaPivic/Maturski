@@ -1,0 +1,42 @@
+{% extends 'admin_t/base.html' %}
+
+{% block page_title %}
+    Edit Class Group 
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                   
+                    <form role="form" method="POST" action="{% url 'edit_classgr_save' %}">
+                        {% csrf_token %}
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Class Group Name </label>
+                                <input type="text" class="form-control" name="class" value="{{ classgr.class_name }}">
+                                <input type="hidden" name="class_id" value="{{ classgr.id }}" />
+                            </div>
+
+                        </div>
+
+                        <div class="card-footer">
+                        <button type="submit" class="btn btn-secondary">Save</button>
+                        </div>
+                    </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div><!-- /.container-fluid -->
+      </section>
+
+  {% endblock main_content %}

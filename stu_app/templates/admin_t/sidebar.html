@@ -1,0 +1,99 @@
+{% load static %}
+
+<aside class="main-sidebar sidebar-light-secondary elevation-4">
+    
+
+      <div class="sidebar">
+        <div class=" p-3 mt-3 pb-3 mb-3 d-flex">
+       
+          <div class="info text-dark">
+           {{ user.first_name }} {{ user.last_name }}
+          </div>
+        </div>
+
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+           
+                <li class="nav-item">
+                  {% url 'admin_home' as admin_home %}
+                  <a href="{{ admin_home }}" class="nav-link {% if request.path == admin_home %} active {% endif %}">
+                    <i class="nav-icon fas fa-home"></i>
+                    <p>
+                      Home
+                    </p>
+                  </a>
+                </li>
+                
+
+            <li class="nav-item">
+              {% url 'manage_staff' as manage_staff %}
+              {% url 'edit_staff' staff_id=id as edit_staff %}
+              <a href="{{ manage_staff }}" class="nav-link {% if request.path == manage_staff %} active {% endif %} {% if request.path == edit_staff %} active {% endif %}">
+                <i class="nav-icon fas fa-chalkboard-teacher"></i>
+                <p>
+                  Manage Staff
+                </p>
+              </a>
+            </li>
+            
+           
+
+            <li class="nav-item">
+              {% url 'manage_student' as manage_student %}
+              {% url 'edit_student' student_id=id as edit_student %}
+              <a href="{{ manage_student }}" class="nav-link {% if request.path == manage_student %} active {% endif %} {% if request.path == edit_student %} active {% endif %}">
+                <i class="nav-icon fas  fa-graduation-cap"></i>
+                <p>
+                  Manage Students
+                </p>
+              </a>
+            </li>
+
+
+            <li class="nav-item">
+              {% url 'manage_classgr' as manage_classgr %}
+              {% url 'edit_classgr' class_id=id as edit_classgr %}
+              <a href="{{ manage_classgr }}" class="nav-link {% if request.path == manage_classgr %} active {% endif %} {% if request.path == edit_classgr %} active {% endif %}">
+                <i class="nav-icon fas fa-chalkboard"></i>
+                              <p>Manage Class Groups</p>
+
+              </a>
+            </li>
+
+          
+
+            <li class="nav-item">
+              {% url 'manage_subject' as manage_subject %}
+              {% url 'edit_subject' subject_id=id as edit_subject %}
+              <a href="{{ manage_subject }}" class="nav-link {% if request.path == manage_subject %} active {% endif %} {% if request.path == edit_subject %} active {% endif %}">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  Manage Subjects
+                </p>
+              </a>
+            </li>
+
+          <li class="nav-item">
+              {% url 'manage_schyear' as manage_schyear %}
+              {% url 'edit_schyear' schyear_id=id as edit_schyear %}
+              <a href="{{ manage_schyear }}" class="nav-link {% if request.path == manage_schyear %} active {% endif %} {% if request.path == edit_schyear %} active {% endif %}">
+                <i class="nav-icon fas fa-calendar"></i>
+                <p>
+                  Manage School Years
+                </p>
+              </a>
+            </li>
+           
+
+
+          
+
+
+           
+
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>

@@ -1,0 +1,55 @@
+{% extends 'admin_t/base.html' %}
+
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+
+            <a class="btn btn-secondary" href="{% url 'add_class_gr' %}" role="button">Add Class Group</a> <br/>&nbsp;
+
+          
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="card">
+                       
+                        <div class="card-body table-responsive p-0">
+                            <table class="table ">
+                            <thead>
+                                <tr>
+                                <th>ID</th>
+                                <th>Class Group Name</th>
+                               
+                             
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for classgr in classgrs %}
+                                <tr>
+                                <td>{{ classgr.id }}</td>
+                                <td>{{ classgr.class_name }}</td>
+                               
+                                <td>
+                                    <a href="{% url 'edit_classgr' classgr.id %}" class="btn btn-success">Edit</a> 
+                                    <a href="{% url 'delete_classgr' classgr.id %}" class="btn btn-danger">Delete</a>
+                                </td>
+                                </tr>
+                                {% endfor %}
+                                
+                            </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                        </div>
+                    <!-- /.card -->
+
+                </div>
+            </div>
+
+        </div><!-- /.container-fluid -->
+      </section>
+
+  {% endblock main_content %}

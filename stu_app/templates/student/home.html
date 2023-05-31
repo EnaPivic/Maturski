@@ -1,0 +1,37 @@
+{% extends 'student/base.html' %}
+
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class=" col-6">
+                    <div class="small-box bg-dark">
+                    <div class="inner">
+                        <h3>Attendance</h3>
+                    </div>
+                   
+                    <a href="{% url 'student_view_attendance' %}" class="small-box-footer">Click here!</a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="small-box bg-dark">
+                    <div class="inner">
+
+                        <h3>Grades<h3>
+                    </div>
+                   
+                    <a href="{% url 'student_view_grade' %}" class="small-box-footer">Click here!</a>
+                    </div>
+                </div>
+           
+      </section>
+
+  {% endblock main_content %}
+
+
+   

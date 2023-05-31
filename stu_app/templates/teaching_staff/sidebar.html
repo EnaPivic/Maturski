@@ -1,0 +1,67 @@
+{% load static %}
+
+<aside class="main-sidebar sidebar-light-secondary elevation-4">
+     
+
+      <div class="sidebar">
+        <div class="p-3 mt-3 pb-3 mb-3 d-flex">
+         
+          <div class="info text-dark">
+        {{ user.first_name }} {{ user.last_name }}
+          </div>
+        </div>
+
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          
+                <li class="nav-item">
+                  {% url 'staff_home' as staff_home %}
+                  <a href="{{ staff_home }}" class="nav-link {% if request.path == staff_home %} active {% endif %}">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                      Home
+                      {% comment %} <span class="right badge badge-danger">New</span> {% endcomment %}
+                    </p>
+                  </a>
+                </li>
+    
+         
+            <li class="nav-item">
+              {% url 'staff_take_attendance' as staff_take_attendance %}
+              <a href="{{ staff_take_attendance }}" class="nav-link {% if request.path == staff_take_attendance %} active {% endif %}">
+                <i class="nav-icon fas fa-calendar-plus"></i>
+                <p>
+                  Take Attendance
+                  {% comment %} <span class="right badge badge-danger">New</span> {% endcomment %}
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              {% url 'staff_edit_attendance' as staff_edit_attendance %}
+              <a href="{{ staff_edit_attendance }}" class="nav-link {% if request.path == staff_edit_attendance %} active {% endif %}">
+                <i class="nav-icon fas fa-calendar-alt"></i>
+                <p>
+                 Edit Attendance
+                  {% comment %} <span class="right badge badge-danger">New</span> {% endcomment %}
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              {% url 'staff_add_grade' as staff_add_grade %}
+              <a href="{{ staff_add_grade }}" class="nav-link {% if request.path == staff_add_grade %} active {% endif %}">
+                <i class="nav-icon fas fa-tasks"></i>
+                <p>
+                  Add Grade
+                  {% comment %} <span class="right badge badge-danger">New</span> {% endcomment %}
+                </p>
+              </a>
+            </li>
+
+        
+
+          </ul>
+        </nav>
+      </div>
+    </aside>

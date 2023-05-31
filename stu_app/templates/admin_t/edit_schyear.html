@@ -1,0 +1,52 @@
+{% extends 'admin_t/base.html' %}
+
+{% block page_title %}
+    Edit School Year
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                  
+                 
+                    <form role="form" method="POST" action="{% url 'edit_schyear_save' %}">
+                        {% csrf_token %}
+
+                        
+                    
+                            
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label> Start  </label>
+                                <input type="date" class="form-control" name="school_start" value="{{ school_year.school_start|date:'Y-m-d' }}">
+                            </div>
+
+                            <div class="form-group">
+                                <label> End  </label>
+                                <input type="date" class="form-control" name="schooly_end" value="{{ school_year.schooly_end|date:'Y-m-d' }}">
+                            </div>
+
+                        </div>
+
+                        <div class="card-footer">
+                        <input type="hidden" name="schyear_id" value="{{ school_year.id }}" />
+                        <button type="submit" class="btn btn-secondary">Save</button>
+                        </div>
+                    </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div><!-- /.container-fluid -->
+      </section>
+
+  {% endblock main_content %}

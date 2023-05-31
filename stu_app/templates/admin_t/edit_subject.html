@@ -1,0 +1,68 @@
+{% extends 'admin_t/base.html' %}
+
+{% block page_title %}
+    Edit Subject 
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                   
+                  
+                    <form role="form" method="POST" action="{% url 'edit_subject_save' %}">
+                        {% csrf_token %}
+
+                        
+                               
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Subject Name </label>
+                                <input type="text" class="form-control" name="subject" value="{{ subject.subject_name }}">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Class </label>
+                                <select class="form-control" name="classgr">
+                                    {% for classgr in classgrs %}
+                                        <option value="{{ classgr.id }}" {% if classgr.id == subject.class_id.id %} selected {% endif %}>{{ classgr.class_name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Staff </label>
+                                <select class="form-control" name="staff">
+                                    {% for staff in staffs %}
+                                        <option value="{{ staff.id }}" {% if staff.id == subject.staff_id.id %} selected {% endif %}>{{ staff.first_name }} {{ staff.last_name }}</option>
+                                    {% endfor %}
+                                </select>
+                                
+                                <input type="hidden" name="subject_id" value="{{ subject.id }}" />
+                            </div>
+
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                        
+                        <button type="submit" class="btn btn-secondary">Save</button>
+                        </div>
+                    </form>
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+            </div>
+
+        </div><!-- /.container-fluid -->
+      </section>
+
+  {% endblock main_content %}
