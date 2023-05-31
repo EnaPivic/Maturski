@@ -3,18 +3,22 @@
 Student Management System using Python with Django
 
 Login credentials
+
   Admin: 
     username:admin@gmail.com
     password:admin
+    
   Student: 
     username:student@gmail.com
     password:student
+    
  Teaching staff: 
     username:staff@gmail.com
     password:staff
     
     
  How to install and run the app:
+ 
     1.install python and pip
     
     2.clone this project: $ git clone https://github.com/EnaPivic/Maturski.git
